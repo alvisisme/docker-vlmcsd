@@ -1,5 +1,5 @@
-FROM alvisisme/docker-ubuntu-1604-163
-LABEL maintainer="Alvis Zhao<alvisisme@gmail.com>"
+FROM alvisisme/ubuntu:16.04
+LABEL maintainer="Alvis Zhao<alvisisme@163.com>"
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y gcc make wget && \
