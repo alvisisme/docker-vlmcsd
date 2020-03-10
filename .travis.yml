@@ -1,0 +1,22 @@
+language: shell
+os: linux
+arch: amd64
+dist: bionic
+
+services: docker
+
+branches:
+  only:
+    - master
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build --pull -t alvisisme/vlmcsd .
+  - docker push alvisisme/vlmcsd
+
+notifications:
+  email:
+    recipients:
+      - alvisisme@163.com
+    on_success: never
+    on_failure: always
