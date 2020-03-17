@@ -2,6 +2,7 @@ version: "3"
 services:
   kms:
     build: .
+    image: alvisisme/vlmcsd
     ports:
       - "1688:1688"
     restart: always
